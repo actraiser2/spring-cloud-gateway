@@ -1,0 +1,18 @@
+server:
+  port: 8000
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: codechallenge
+          uri: http://localhost:8080
+          predicates:
+            - Path=/codechallenge/**
+          filters:
+            - StripPrefix=1
+            
+logging:
+  level:
+    org.springframework.cloud.gateway.handler.predicate: trace
+          
+    
