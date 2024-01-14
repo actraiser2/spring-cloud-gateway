@@ -11,6 +11,17 @@ spring:
           filters:
             - StripPrefix=1
             
+management:
+  server:
+    port: 8001
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include:
+        - "*"
+        
+            
 logging:
   level:
     org.springframework.cloud.gateway.handler.predicate: trace
